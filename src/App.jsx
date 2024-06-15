@@ -1,9 +1,15 @@
-import Header from "./Components/Header"
+import AppContainer from "./Components/AppContainer";
+import Navbar from "./Components/Navbar";
+import Sidebar from "./Components/Sidebar"
 
 
 function App() {
   return (
-    <Header></Header>
+    <AppContainer>
+      <Sidebar></Sidebar>;
+      <Navbar></Navbar>
+    </AppContainer>  
+
   )
 }
 
