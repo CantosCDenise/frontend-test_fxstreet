@@ -3,14 +3,23 @@ import styled from "styled-components";
 
 const SidebarContainer = styled.div`
     display: flex;
-    width: 20vw;
-    background-color: blue;
+    width: 255px;
+    background-color: #242d38;
 `;
+
+const SidebarLogo = styled.img`
+    width: 163px;
+    height: 53.94px;
+    margin-top: 47px;
+    margin-left: 46px;
+    margin-right: 46px;
+    padding: 0;
+`
 
 const Sidebar = () => {
     return (
         <SidebarContainer>
-            <h1>Sidebar</h1>
+            <SidebarLogo src="src\assets\images\FXStreetpremium.png"/>
         </SidebarContainer>
     );
 };

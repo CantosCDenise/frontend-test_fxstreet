@@ -3,15 +3,15 @@ import styled from 'styled-components';
 
 const NavbarContainer = styled.div`
     display: flex;
-    width: 100%;
-    height: 5%;
-    background-color: red;
+    width: auto;
+    height: 65px;
+    background-color: #ffffff;
 `
 
 const Navbar = () => {
     return (
         <NavbarContainer>
-            <h1>Navbar</h1>
+            <p>Navbar</p>
         </NavbarContainer>
     );
 };

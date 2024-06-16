@@ -7,7 +7,7 @@ const MainContentContainer = styled.div`
     display: flex;
     width: 100%;
     flex-direction: column;
-    background-color: brown;
+    background-color: #ececf1;
 `
 
 const MainContent = () => {
@@ -19,11 +19,11 @@ const MainContent = () => {
 
     const cardData = {
         author,
-        title: "example title",
-        feed: "example feed",
-        subFeed: "example subfeed",
-        publicationTime: "2023-11-19T09:00:00Z",
-        content: "example content",
+        title: "The economy of bitcoins",
+        feed: "Insights",
+        subFeed: "Understanding Bitcoin's Value Trends",
+        publicationTime: "May 23, 10:44",
+        content: "Cryptocurrency markets have experienced unprecedented growth in recent years. The rise of Bitcoin, Ethereum, and other altcoins has reshaped the financial landscape, driving both excitement and uncertainty. Analyzing the market's behavior and the factors influencing these trends is crucial. <a href='https://www.linktosomething.com'>This link refers to an external resource</a>. Furthermore, the implications of decentralized finance (DeFi) and blockchain technology have sparked widespread discussion and innovation in fintech circles.",
         image: "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcStM5tSHdr_tdTlvNYFraRsrY1KWUsPZYI9aEdQ6G1llhY3lgdMJ1rC4blV94cqHOu2TCRgVe7moVdmUT4"
     }
 
