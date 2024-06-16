@@ -5,6 +5,7 @@ import CardPost from "./CardPost";
 import Latest from "./Latest";
 import { useNavigate } from "react-router-dom";
 import Content from "./Content";
+import Popular from "./Popular";
 
 
 const MainContentContainer = styled.div`
@@ -29,7 +30,7 @@ const MainContent = () => {
             <Navbar></Navbar>
             <button onClick={handleLatestButtonClick}>Latest</button>
             <button onClick={handlePopularButtonClick}>Popular</button>
-            <Latest/>
+            <Popular/>
         </MainContentContainer>
         
     )
