@@ -27,15 +27,8 @@ const Content = () => {
         image: "https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcStM5tSHdr_tdTlvNYFraRsrY1KWUsPZYI9aEdQ6G1llhY3lgdMJ1rC4blV94cqHOu2TCRgVe7moVdmUT4"
     }
 
-    const navigate = useNavigate()
-
-    function handleLatestButtonClick() {
-        navigate('/Latest')
-    }
-
     return (
         <ContentContainer>
-            <button onClick={handleLatestButtonClick}>Latest</button>
             <CardPost {...cardData}/>
         </ContentContainer>
         

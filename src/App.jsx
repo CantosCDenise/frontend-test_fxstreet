@@ -13,7 +13,6 @@ function App() {
       <Sidebar />
       <Routes>
         <Route path="/" element={<MainContent />} />
-        <Route path="popular" element={<MCPopular />}/>
       </Routes>
     </AppContainer>
   );

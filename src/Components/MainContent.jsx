@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import CardPost from "./CardPost";
 import Latest from "./Latest";
 import { useNavigate } from "react-router-dom";
 import Content from "./Content";
+import Popular from "./Popular";
 
 
 const MainContentContainer = styled.div`
@@ -15,24 +16,17 @@ const MainContentContainer = styled.div`
 `
 
 const MainContent = () => {
-    const navigate = useNavigate()
-
-    function handleLatestButtonClick() {
-        navigate('/')
-    }
-    function handlePopularButtonClick() {
-        navigate('/popular')
-    }
+   const [view, setView] = useState("latest");
 
     return (
         <MainContentContainer>
-            <Navbar></Navbar>
-            <button onClick={handleLatestButtonClick}>Latest</button>
-            <button onClick={handlePopularButtonClick}>Popular</button>
-            <Latest/>
+            <Navbar />
+            <button onClick={() => setView("latest")}>Latest</button>
+            <button onClick={() => setView("popular")}>Popular</button>
+            {view === "latest" ? <Latest /> : <Popular />}
         </MainContentContainer>
         
-    )
-}
+    );
+};
 
 export default MainContent;
