@@ -1,9 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Navbar from "./Navbar";
 import CardPost from "./CardPost";
-import Latest from "./Latest";
-import { useNavigate } from "react-router-dom";
 
 
 const ContentContainer = styled.div`

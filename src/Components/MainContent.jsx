@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
-import CardPost from "./CardPost";
 import Latest from "./Latest";
 import { useNavigate } from "react-router-dom";
 
@@ -28,7 +27,7 @@ const MainContent = () => {
             <Navbar />
             <button onClick={handleLatestButtonClick}>Latest</button>
             <button onClick={handlePopularButtonClick}>Popular</button>
-            <Latest /> {/* Opcional: Puedes renderizar Latest directamente */}
+            <Latest />
         </MainContentContainer>
     );
 };

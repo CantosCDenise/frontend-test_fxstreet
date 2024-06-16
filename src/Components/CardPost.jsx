@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { TbFileSearch } from "react-icons/tb";
-import { RiArrowRightSFill } from "react-icons/ri";
 import SearchIcon from '../icons/search.svg';
 import ArrowIcon from '../icons/arrow.svg';
+import { format } from 'date-fns';
+
 
 const CardPostContainer = styled.div`
     width: 700px;
@@ -113,6 +113,8 @@ const SaveButton = styled.button`
 `
 
 const CardPost = ({ author, title, feed, subFeed, publicationTime, content, image}) => {
+    const formattedDate = format(new Date(publicationTime), "PPpp");
+
     return (
         <CardPostContainer>
             <CardHead>
@@ -123,17 +125,19 @@ const CardPost = ({ author, title, feed, subFeed, publicationTime, content, imag
                     <PostSubType>{subFeed}</PostSubType>
                 </CardCategory>
                 <CardTime>
-                    <PublicationTime>{publicationTime}</PublicationTime>
+                    <PublicationTime>{formattedDate}</PublicationTime>
                 </CardTime>
             </CardHead>
             <CardAuthor>
-                <AuthorAvatar src={author.imageUrl}/>
-                <AuthorName>{author.name}</AuthorName>
-                <AuthorCompany>{author.companyName}</AuthorCompany>
+                <AuthorAvatar src={author.imageUrl} alt={`${author.name}'s Avatar`}/>
+                <div>
+                    <AuthorName>{author.name}</AuthorName>
+                    <AuthorCompany>{author.companyName}</AuthorCompany>
+                </div>
             </CardAuthor>
             <CardTitle>{title}</CardTitle>
-            <CardContent>{content}</CardContent>
-            <CardImage src={image} alt="Card Image"/>
+            <CardContent dangerouslySetInnerHTML={{ __html: content }} />
+            {image && <CardImage src={image} alt="Card Image" />}
         </CardPostContainer>
     )
 }
