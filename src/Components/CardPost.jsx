@@ -7,6 +7,7 @@ import LikeIcon from '../icons/like.svg';
 import SaveIcon from '../icons/save.svg';
 import DropdownIcon from '../icons/dots.svg';
 import { format } from 'date-fns';
+import DropdownMenu from "./DropdownMenu";
 
 const CardPostContainer = styled.div`
     width: 700px;
@@ -187,6 +188,7 @@ const CardPost = ({ author, title, feed, subFeed, publicationTime, content}) => 
                 <DropdownButton>
                     <img src={DropdownIcon} alt="Dropdown Icon" />
                 </DropdownButton>
+                <DropdownMenu/>
             </CardOptions>
         </CardPostContainer>
     )
