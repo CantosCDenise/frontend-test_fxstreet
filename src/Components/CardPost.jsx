@@ -5,7 +5,6 @@ import ArrowIcon from '../icons/arrow.svg';
 import ClockIcon from '../icons/clock.svg';
 import LikeIcon from '../icons/like.svg';
 import SaveIcon from '../icons/save.svg';
-import DropdownIcon from '../icons/dots.svg';
 import { format } from 'date-fns';
 import DropdownMenu from "./DropdownMenu";
 
@@ -185,9 +184,6 @@ const CardPost = ({ author, title, feed, subFeed, publicationTime, content}) => 
                     <img src={SaveIcon} alt="Save Icon" />
                     Save
                 </SaveButton>
-                <DropdownButton>
-                    <img src={DropdownIcon} alt="Dropdown Icon" />
-                </DropdownButton>
                 <DropdownMenu/>
             </CardOptions>
         </CardPostContainer>
