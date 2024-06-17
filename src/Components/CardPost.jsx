@@ -20,7 +20,7 @@ const CardPostContainer = styled.div`
     margin-left: 1px;
 `
 //Head styles
-const CardHead = styled.div`
+const CardTop = styled.div`
     display: flex;
     height: 44px;
     flex-direction: row;
@@ -61,29 +61,38 @@ const PublicationTime = styled.span`
 `
 
 //Author styles
-const CardAuthor = styled.div`
+const CardHead = styled.div`
     display: flex;
+    padding: 20px;
+    padding-bottom: 10px;
     flex-direction: row;
+    align-items: center;
     gap: 10px;
+    border-bottom: 3px;
+    border-color: black;
 `
 
 const AuthorAvatar = styled.img`
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     margin-right: 10px;
+    border-radius: 50%;
 `
-const AuthorName = styled.span`
-    font-weight: bold;
+const HeadRight = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
 `
-const AuthorCompany = styled.span`
-    color: blanchedalmond;
+const AuthorInfo = styled.div`
+    font-size: 16px;
+    font-weight: 700;
+    color: #A3A3A8;
 `
 //Content styles
 
-const CardTitle = styled.h1`
+const CardTitle = styled.span`
     font-size: 22.4px;
     font-weight: 700;
-    line-height: 25.6px;
 `
 
 const CardContent = styled.p`
@@ -133,12 +142,14 @@ const SaveButton = styled.button`
     font-weight: 400;
 
     background-color: transparent;
-    border: none;
-    color: #49494F;
     
     &:hover{
         background-color: green;
     }
+`
+
+const Separator = styled.hr`
+
 `
 
 const CardPost = ({ author, title, feed, subFeed, publicationTime, content}) => {
@@ -146,7 +157,7 @@ const CardPost = ({ author, title, feed, subFeed, publicationTime, content}) => 
 
     return (
         <CardPostContainer>
-            <CardHead>
+            <CardTop>
                 <CardCategory>
                     <img src={SearchIcon} alt="Search Icon" />
                     <PostType>{feed}</PostType>
@@ -157,15 +168,17 @@ const CardPost = ({ author, title, feed, subFeed, publicationTime, content}) => 
                     <img src={ClockIcon} alt="Clock Icon" />
                     <PublicationTime>{formattedDate}</PublicationTime>
                 </CardTime>
-            </CardHead>
-            <CardAuthor>
+            </CardTop>
+            <CardHead>
                 <AuthorAvatar src={author.imageUrl} alt={`${author.name}'s Avatar`}/>
-                <div>
-                    <AuthorName>{author.name}</AuthorName>
-                    <AuthorCompany>{author.companyName}</AuthorCompany>
-                </div>
-            </CardAuthor>
-            <CardTitle>{title}</CardTitle>
+                <HeadRight>
+                    <AuthorInfo>
+                        {author.name} | {author.companyName}
+                    </AuthorInfo>
+                    <CardTitle>{title}</CardTitle>
+                </HeadRight>
+            </CardHead>
+            <Separator/>
             <CardContent dangerouslySetInnerHTML={{ __html: content }} />
             <CardOptions>
                 <LikeButton>
