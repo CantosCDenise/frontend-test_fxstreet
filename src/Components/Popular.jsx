@@ -16,7 +16,7 @@ const Popular = () => {
     return (
     <div>
         <h2>Popular posts</h2>
-        {posts.map(post => (
+        {posts.slice(0,1).map(post => (
             <CardPost key={post.id} {...post} />
         ))}
     </div>

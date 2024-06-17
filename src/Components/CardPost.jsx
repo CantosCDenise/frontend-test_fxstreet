@@ -2,16 +2,21 @@ import React from "react";
 import styled from "styled-components";
 import SearchIcon from '../icons/search.svg';
 import ArrowIcon from '../icons/arrow.svg';
+import ClockIcon from '../icons/clock.svg';
+import LikeIcon from '../icons/like.svg';
+import SaveIcon from '../icons/save.svg';
+import DropdownIcon from '../icons/dots.svg';
 import { format } from 'date-fns';
-
 
 const CardPostContainer = styled.div`
     width: 700px;
-    height: 626px;
-    background-color: #FFFFFF;
+    height: auto;
+    
     border: 1px;
     border-color: #ECECF1;
     color: #49494F;
+    background-color: #FFFFFF;
+
     margin-left: 1px;
 `
 //Head styles
@@ -26,9 +31,10 @@ const CardHead = styled.div`
 const CardCategory = styled.div`
     display: flex;
     flex-direction: row;
-    width: 80%;
+    width: 70%;
+    margin-left: 30px;
 
-    gap: 5px;
+    gap: 8px;
     
 
     font-size: 17.6px;
@@ -43,7 +49,11 @@ const PostSubType = styled.span`
 `
 
 const CardTime = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
     width: 102px;
+    margin-right: 25px;
 `
 const PublicationTime = styled.span`
     font-weight: 400;
@@ -69,11 +79,6 @@ const AuthorCompany = styled.span`
     color: blanchedalmond;
 `
 //Content styles
-const CardImage = styled.img`
-    width: 100%;
-    height: 300px; 
-    object-fit: cover; 
-`
 
 const CardTitle = styled.h1`
     font-size: 22.4px;
@@ -88,32 +93,64 @@ const CardContent = styled.p`
     margin-bottom: 10px;
 `
 //Button styles
-const CardButtons = styled.div`
+const CardOptions = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+
+    width: 253px;
+    height: 21px;
 `
 const LikeButton = styled.button`
-    background-color: lightcoral;
-    color: black;
-    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    
+    width: 70px;
+    height: 19px;
+
+    font-size: 18px;
+    font-weight: 400;
+
+    background-color: transparent;
+    border: none;
+    color: #49494F;
 
     &:hover {
         background-color: green;
     }
 `
 const SaveButton = styled.button`
-    background-color: #830202;
-    color: black;
-    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    
+    width: 70px;
+    height: 19px;
+
+    font-size: 18px;
+    font-weight: 400;
+
+    background-color: transparent;
+    border: none;
+    color: #49494F;
     
     &:hover{
         background-color: green;
     }
 `
+const DropdownButton = styled.button`
+    background-color: transparent;
+    border: none;
 
-const CardPost = ({ author, title, feed, subFeed, publicationTime, content, image}) => {
-    const formattedDate = format(new Date(publicationTime), "PPpp");
+    &:hover{
+        cursor: pointer;
+    }
+`
+
+const CardPost = ({ author, title, feed, subFeed, publicationTime, content}) => {
+    const formattedDate = format(new Date(publicationTime), "MMM dd, HH:mm");
 
     return (
         <CardPostContainer>
@@ -125,6 +162,7 @@ const CardPost = ({ author, title, feed, subFeed, publicationTime, content, imag
                     <PostSubType>{subFeed}</PostSubType>
                 </CardCategory>
                 <CardTime>
+                    <img src={ClockIcon} alt="Clock Icon" />
                     <PublicationTime>{formattedDate}</PublicationTime>
                 </CardTime>
             </CardHead>
@@ -137,7 +175,19 @@ const CardPost = ({ author, title, feed, subFeed, publicationTime, content, imag
             </CardAuthor>
             <CardTitle>{title}</CardTitle>
             <CardContent dangerouslySetInnerHTML={{ __html: content }} />
-            {image && <CardImage src={image} alt="Card Image" />}
+            <CardOptions>
+                <LikeButton>
+                    <img src={LikeIcon} alt="Like Icon" />
+                    Like
+                </LikeButton>
+                <SaveButton>
+                    <img src={SaveIcon} alt="Save Icon" />
+                    Save
+                </SaveButton>
+                <DropdownButton>
+                    <img src={DropdownIcon} alt="Dropdown Icon" />
+                </DropdownButton>
+            </CardOptions>
         </CardPostContainer>
     )
 }

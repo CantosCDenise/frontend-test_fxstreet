@@ -4,6 +4,7 @@ import styled from "styled-components";
 const SidebarContainer = styled.div`
     display: flex;
     width: 255px;
+    height: 100%;
     background-color: #242d38;
 `;
 

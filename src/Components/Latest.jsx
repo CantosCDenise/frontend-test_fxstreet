@@ -16,7 +16,7 @@ const Latest = () => {
     return (
         <div>
             <h2>Latest Posts</h2>
-            {posts.map(post => (
+            {posts.slice(0,2).map(post => (
                 <CardPost key={post.id} {...post} />
             ))}
         </div>
