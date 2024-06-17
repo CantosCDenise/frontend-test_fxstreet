@@ -59,6 +59,10 @@ const PublicationTime = styled.span`
     font-weight: 400;
     font-size: 12.8px;
 `
+const ContentContainer = styled.div`
+    padding: 25px;
+    padding-top: 0px;
+`
 
 //Author styles
 const CardHead = styled.div`
@@ -127,7 +131,7 @@ const LikeButton = styled.button`
     color: #49494F;
 
     &:hover {
-        background-color: green;
+        color: red;
     }
 `
 const SaveButton = styled.button`
@@ -142,9 +146,11 @@ const SaveButton = styled.button`
     font-weight: 400;
 
     background-color: transparent;
+    border: none;
+    color: #49494F;
     
     &:hover{
-        background-color: green;
+        color: green;
     }
 `
 
@@ -169,6 +175,9 @@ const CardPost = ({ author, title, feed, subFeed, publicationTime, content}) => 
                     <PublicationTime>{formattedDate}</PublicationTime>
                 </CardTime>
             </CardTop>
+
+            
+
             <CardHead>
                 <AuthorAvatar src={author.imageUrl} alt={`${author.name}'s Avatar`}/>
                 <HeadRight>
@@ -179,6 +188,7 @@ const CardPost = ({ author, title, feed, subFeed, publicationTime, content}) => 
                 </HeadRight>
             </CardHead>
             <Separator/>
+            <ContentContainer>
             <CardContent dangerouslySetInnerHTML={{ __html: content }} />
             <CardOptions>
                 <LikeButton>
@@ -191,6 +201,7 @@ const CardPost = ({ author, title, feed, subFeed, publicationTime, content}) => 
                 </SaveButton>
                 <DropdownMenu/>
             </CardOptions>
+            </ContentContainer>
         </CardPostContainer>
     )
 }

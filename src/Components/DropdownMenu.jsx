@@ -9,6 +9,9 @@ const DropdownContainer = styled.div`
 `;
 
 const DropdownButton = styled.button`
+    width: 30px;
+    height: 30px;
+    
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -26,8 +29,10 @@ const DropdownContent = styled.div`
     z-index: 1;
 
     & a {
-        color: black;
+        color: #49494F;
         padding: 12px 16px;
+        font-size: 16px;
+        font-weight: 400;
         text-decoration: none;
         display: block;
 
@@ -52,7 +57,8 @@ const BackButton = styled.button`
     width: 100%;
     height: 48px;
 
-    background-color: lightblue;
+    background-color: #f1f1f1;
+    color: #49494F;
     border: none;
 
     font-size: 16px;
@@ -64,7 +70,9 @@ const BackButton = styled.button`
 `;
 
 const SendFormButton = styled.button`
-    
+    width: 247px;
+    height: 42px;
+    font-size: 12.8px;
 `;
 
 const RadioGroup = styled.div`
