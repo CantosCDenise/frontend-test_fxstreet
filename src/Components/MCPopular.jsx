@@ -1,39 +1,35 @@
 import React from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
-import CardPost from "./CardPost";
-import Latest from "./Latest";
-import { useNavigate } from "react-router-dom";
-import Content from "./Content";
 import Popular from "./Popular";
+import Widgets from "./Widgets";
 
 
-const MainContentContainer = styled.div`
+const MCPopularContainer = styled.div`
     display: flex;
     width: 100%;
     flex-direction: column;
     background-color: #ececf1;
+`;
+
+const Content = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
 `
 
-const MainContent = () => {
-    const navigate = useNavigate()
-
-    function handleLatestButtonClick() {
-        navigate('/')
-    }
-    function handlePopularButtonClick() {
-        navigate('/popular')
-    }
+const MCPopular = () => {
 
     return (
-        <MainContentContainer>
-            <Navbar></Navbar>
-            <button onClick={handleLatestButtonClick}>Latest</button>
-            <button onClick={handlePopularButtonClick}>Popular</button>
-            <Popular/>
-        </MainContentContainer>
-        
-    )
-}
+        <MCPopularContainer>
+            <Navbar/>
+            <Content>
+                <Popular/>
+                <Widgets/>
+            </Content>
+        </MCPopularContainer>
+    );
+};
 
-export default MainContent;
+export default MCPopular;

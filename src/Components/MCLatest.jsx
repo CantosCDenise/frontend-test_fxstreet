@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import Latest from "./Latest";
-import { useNavigate } from "react-router-dom";
+import Widgets from "./Widgets";
 
 const MCLatestContainer = styled.div`
     display: flex;
@@ -11,23 +11,22 @@ const MCLatestContainer = styled.div`
     background-color: #ececf1;
 `;
 
+const Content = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+`
+
 const MCLatest = () => {
-    const navigate = useNavigate();
-
-    function handleLatestButtonClick() {
-        navigate("/");
-    }
-
-    function handlePopularButtonClick() {
-        navigate("/popular");
-    }
 
     return (
         <MCLatestContainer>
             <Navbar />
-            <button onClick={handleLatestButtonClick}>Latest</button>
-            <button onClick={handlePopularButtonClick}>Popular</button>
-            <Latest />
+            <Content>
+                <Latest/>
+                <Widgets/>
+            </Content>
         </MCLatestContainer>
     );
 };

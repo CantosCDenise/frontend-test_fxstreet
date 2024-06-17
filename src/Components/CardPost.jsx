@@ -140,14 +140,6 @@ const SaveButton = styled.button`
         background-color: green;
     }
 `
-const DropdownButton = styled.button`
-    background-color: transparent;
-    border: none;
-
-    &:hover{
-        cursor: pointer;
-    }
-`
 
 const CardPost = ({ author, title, feed, subFeed, publicationTime, content}) => {
     const formattedDate = format(new Date(publicationTime), "MMM dd, HH:mm");
