@@ -263,6 +263,7 @@ const SaveIcon = styled.svg`
     height: 19px;
 `
 
+
 const CardPost = ({ author, title, feed, subFeed, publicationTime, content}) => {
     const formattedDate = format(new Date(publicationTime), "MMM dd, HH:mm");
     const [liked, setLiked] = useState(false);
@@ -274,6 +275,7 @@ const CardPost = ({ author, title, feed, subFeed, publicationTime, content}) => 
     const handleSaveClick = () => {
         setSaved(!saved)
     }
+
 
     return (
         <CardPostContainer>
@@ -300,6 +302,7 @@ const CardPost = ({ author, title, feed, subFeed, publicationTime, content}) => 
             </CardHead>
             <ContentContainer>
             <CardContent dangerouslySetInnerHTML={{ __html: content }} />
+
             <CardOptions>
             {!liked && (
                         <LikeButton onClick={handleLikeClick}>
