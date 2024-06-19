@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import CardPost from "./CardPost";
 import styled from "styled-components";
 import DownArrowIcon from "../icons/downarrow.svg";
+import FilterIcon from "../icons/filter.svg";
 
 const ContentContainer = styled.div`
     width: 100%;
@@ -53,6 +54,21 @@ const ShowFilter = styled.div`
         width: 10px;
         height: 10px;
     }
+
+    @media only screen and (max-width: 1080px) {
+        display: none;
+    }
+`
+
+const MobileFilter = styled.div`
+    display: none;
+    margin-right: 40px;
+    align-items: center;
+
+    @media only screen and (max-width: 1080px) {
+    display: flex;
+    
+  }
 `
 
 const PostsContainer = styled.div`
@@ -109,6 +125,9 @@ const Latest = () => {
                     <span>All</span>
                     <img src={DownArrowIcon} alt="Down Arrow Icon"/>
                 </ShowFilter>
+                <MobileFilter>
+                    <img src={FilterIcon} alt="Filter Icon" />
+                </MobileFilter>
             </FiltersContainer>
             <PostsContainer>
                 {filteredPosts.map(post => (
