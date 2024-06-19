@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from "react";
 import CardPost from "./CardPost";
 import styled from "styled-components";
+import DownArrowIcon from "../icons/downarrow.svg";
 
 const ContentContainer = styled.div`
     width: 100%;
     padding: 20px;
 `;
 
+const FiltersContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+`
+
 const ButtonsContainer = styled.div`
     display: flex;
     flex-direction: row;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 `;
 
 const Button = styled.div`
@@ -27,9 +35,25 @@ const Button = styled.div`
     }
 `;
 
-const filterContainer = styled.div`
+const ShowFilter = styled.div`
     display: flex;
     flex-direction: row;
+    font-size: 14.72px;
+    font-weight: 400;
+    color: #49494F;
+    gap: 10px;
+    margin-right: 70px;
+    align-items: center;
+    cursor: pointer;
+
+    span:last-of-type{
+        font-weight: 700;
+        font-size: 17.6px;
+    }
+    img {
+        width: 10px;
+        height: 10px;
+    }
 `
 
 const PostsContainer = styled.div`
@@ -66,20 +90,27 @@ const Latest = () => {
 
     return (
         <ContentContainer>
-            <ButtonsContainer>
-                <Button
-                    onClick={handleLatestButtonClick}
-                    active={view === "latest"}
-                >
-                    Latest
-                </Button>
-                <Button
-                    onClick={handlePopularButtonClick}
-                    active={view === "popular"}
-                >
-                    Popular
-                </Button>
-            </ButtonsContainer>
+            <FiltersContainer>
+                <ButtonsContainer>
+                    <Button
+                        onClick={handleLatestButtonClick}
+                        active={view === "latest"}
+                    >
+                        Latest
+                    </Button>
+                    <Button
+                        onClick={handlePopularButtonClick}
+                        active={view === "popular"}
+                    >
+                        Popular
+                    </Button>
+                </ButtonsContainer>
+                <ShowFilter>
+                    <span>Show:</span>
+                    <span>All</span>
+                    <img src={DownArrowIcon} alt="Down Arrow Icon"/>
+                </ShowFilter>
+            </FiltersContainer>
             <PostsContainer>
                 {filteredPosts.map(post => (
                     <CardPost key={post.id} {...post} />
