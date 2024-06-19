@@ -50,6 +50,7 @@ const PostSubType = styled.span`
 const CardTime = styled.div`
     display: flex;
     flex-direction: row;
+    color: #49494F;
     gap: 5px;
     width: 102px;
     margin-right: 25px;
