@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import CardPost from "./CardPost";
 import styled from "styled-components";
 
-const LatestContainer = styled.div`
+const ContentContainer = styled.div`
     width: 100%;
     padding: 20px;
 `;
@@ -26,6 +26,11 @@ const Button = styled.div`
         color: #E4871B;
     }
 `;
+
+const filterContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+`
 
 const PostsContainer = styled.div`
     width: 100%;
@@ -60,7 +65,7 @@ const Latest = () => {
     const filteredPosts = view === "latest" ? posts : posts.filter(post => post.isPopular);
 
     return (
-        <LatestContainer>
+        <ContentContainer>
             <ButtonsContainer>
                 <Button
                     onClick={handleLatestButtonClick}
@@ -80,7 +85,7 @@ const Latest = () => {
                     <CardPost key={post.id} {...post} />
                 ))}
             </PostsContainer>
-        </LatestContainer>
+        </ContentContainer>
     );
 };
 

@@ -304,12 +304,12 @@ const CardPost = ({ author, title, feed, subFeed, publicationTime, content}) => 
                 </SaveButton>
                 )}
                 {saved && (
-                    <SaveButton onClick={handleSaveClick}>
+                    <SavedButton onClick={handleSaveClick}>
                     <SaveIcon>
                     <path d="M12.7246 0.125C13.278 0.125 13.75 0.336589 14.1406 0.759766C14.5638 1.18294 14.7754 1.67122 14.7754 2.22461V18.875L7.5 15.75L0.224609 18.875V2.22461C0.224609 1.67122 0.419922 1.18294 0.810547 0.759766C1.23372 0.336589 1.72201 0.125 2.27539 0.125H12.7246Z" fill="#338473"/>
                     </SaveIcon>
                     Saved!
-                </SaveButton>
+                </SavedButton>
                 )}
                 
                 <DropdownMenu/>

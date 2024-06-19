@@ -75,6 +75,8 @@ const SendFormButton = styled.button`
     width: 247px;
     height: 42px;
     font-size: 12.8px;
+    font-weight: bold;
+    color: lightgray;
     background-color: transparent;
     border: 1px solid lightgray;
 
