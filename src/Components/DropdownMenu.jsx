@@ -70,14 +70,20 @@ const BackButton = styled.button`
 `;
 
 const SendFormButton = styled.button`
+    margin-left: 20px;
+    margin-bottom: 10px;
     width: 247px;
     height: 42px;
     font-size: 12.8px;
+    background-color: transparent;
+    border: 1px solid lightgray;
+
 `;
 
 const RadioGroup = styled.div`
     display: flex;
     flex-direction: column;
+    padding: 10px;
 
 `;
 
@@ -130,6 +136,22 @@ const DropdownMenu = () => {
                         <RadioOption>
                             <input type="radio" name="option" value="nottopic" />
                             I'm not interested in this topic
+                        </RadioOption>
+                        <RadioOption>
+                            <input type="radio" name="option" value="manyposts"/>
+                            I've seen too many posts on this topic
+                        </RadioOption>
+                        <RadioOption>
+                            <input type="radio" name="option" value="incorrect"/>
+                            The information is incorrect
+                        </RadioOption>
+                        <RadioOption>
+                            <input type="radio" name="option" value="postseen"/>
+                            I've seen this post before
+                        </RadioOption>
+                        <RadioOption>
+                            <input type="radio" name="option" value="other"/>
+                            Other reasons
                         </RadioOption>
                     </RadioGroup>
                     <SendFormButton>Hide content</SendFormButton>
