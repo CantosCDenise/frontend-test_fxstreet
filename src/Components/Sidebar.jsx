@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import MenuIcon from "../icons/menu.svg";
+import LogoIcon from "../icons/logo.svg";
+import LogoMobileIcon from "../icons/logomobile.svg"
 
 const SidebarContainer = styled.div`
     display: flex;
@@ -87,7 +89,7 @@ const Menu = styled.div`
 const Sidebar = () => {
     return (
         <SidebarContainer>
-            <SidebarLogo src={MenuIcon} alt="FXS logo"/>
+            <SidebarLogo src={LogoIcon} alt="FXS logo"/>
             <Menu>
                 <a href="link">Trade ideas</a>
                 <a href="link">Strategies</a>
@@ -96,7 +98,7 @@ const Sidebar = () => {
                 <a href="link">Recordings</a>
             </Menu>
             <MobileContainer>
-                <MobileLogo src={MenuIcon} alt="FXS logo" />
+                <MobileLogo src={LogoMobileIcon} alt="FXS logo" />
                 <MobileMenu>
                     <img src={MenuIcon} alt="Menu Icon" />
                     <img src={MenuIcon} alt="Menu Icon" />
