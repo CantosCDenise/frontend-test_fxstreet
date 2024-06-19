@@ -87,7 +87,7 @@ const Menu = styled.div`
 const Sidebar = () => {
     return (
         <SidebarContainer>
-            <SidebarLogo src="public\FXStreetpremium.png" alt="FXS logo"/>
+            <SidebarLogo src="public\assets\FXStreetpremium.png" alt="FXS logo"/>
             <Menu>
                 <a href="link">Trade ideas</a>
                 <a href="link">Strategies</a>
@@ -96,7 +96,7 @@ const Sidebar = () => {
                 <a href="link">Recordings</a>
             </Menu>
             <MobileContainer>
-                <MobileLogo src="public\FXStreetpremium_mobile.png" alt="FXS logo" />
+                <MobileLogo src="public\assets\FXStreetpremium_mobile.png" alt="FXS logo" />
                 <MobileMenu>
                     <img src={MenuIcon} alt="Menu Icon" />
                     <img src={MenuIcon} alt="Menu Icon" />

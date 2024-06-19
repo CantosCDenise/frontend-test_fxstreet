@@ -73,7 +73,7 @@ const MobileFilter = styled.div`
 
 const PostsContainer = styled.div`
     width: 100%;
-    max-height: 850px;
+    max-height: 800px;
     overflow-y: auto;
     overflow-x: hidden;
     display: flex;
