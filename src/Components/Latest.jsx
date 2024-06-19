@@ -7,6 +7,7 @@ const LatestContainer = styled.div`
     display: flex;
     width: 702px;
     flex-direction: column;
+    gap: 15px;
 
 `
 const ButtonsContainer = styled.div`
@@ -40,6 +41,9 @@ const PopularButton = styled.div`
 
 const PostsContainter = styled.div`
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 `
 const Latest = () => {
 

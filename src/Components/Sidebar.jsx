@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 const SidebarContainer = styled.div`
     display: flex;
+    flex-direction: column;
+    gap: 100px;
     width: 255px;
     height: 100%;
     background-color: #242d38;
@@ -17,10 +19,32 @@ const SidebarLogo = styled.img`
     padding: 0;
 `
 
+const Menu = styled.div`
+    height: 217px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    justify-content: space-between;
+    
+
+    & a {
+        color: white;
+        text-decoration: none;
+    }
+
+`
+
 const Sidebar = () => {
     return (
         <SidebarContainer>
             <SidebarLogo src="src\assets\images\FXStreetpremium.png"/>
+            <Menu>
+                <a href="link">Trade ideas</a>
+                <a href="link">Strategies</a>
+                <a href="link">Signals</a>
+                <a href="link">Events</a>
+                <a href="link">Recordings</a>
+            </Menu>
         </SidebarContainer>
     );
 };

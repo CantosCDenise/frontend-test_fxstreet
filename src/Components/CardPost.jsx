@@ -12,11 +12,11 @@ const CardPostContainer = styled.div`
     width: 700px;
     height: auto;
     
-    border: 1px;
-    border-color: #ECECF1;
+    border: 1px solid #DDDEDF;
+    border-radius: 5px;
     color: #49494F;
     background-color: #FFFFFF;
-
+    
     margin-left: 1px;
 `
 //Head styles
@@ -27,6 +27,9 @@ const CardTop = styled.div`
     align-items: center;
     justify-content: space-between;
     background-color: #f6f6f8;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
 `
 const CardCategory = styled.div`
     display: flex;
@@ -72,8 +75,7 @@ const CardHead = styled.div`
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    border-bottom: 3px;
-    border-color: black;
+    border-bottom: 1px solid #DDDEDF;
 `
 
 const AuthorAvatar = styled.img`
@@ -104,6 +106,13 @@ const CardContent = styled.p`
     line-height: 22.4px;
     font-weight: 300;
     margin-bottom: 10px;
+
+    & a{
+        color: #e4871b;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
 `
 //Button styles
 const CardOptions = styled.div`
@@ -154,10 +163,6 @@ const SaveButton = styled.button`
     }
 `
 
-const Separator = styled.hr`
-
-`
-
 const CardPost = ({ author, title, feed, subFeed, publicationTime, content}) => {
     const formattedDate = format(new Date(publicationTime), "MMM dd, HH:mm");
 
@@ -174,10 +179,7 @@ const CardPost = ({ author, title, feed, subFeed, publicationTime, content}) => 
                     <img src={ClockIcon} alt="Clock Icon" />
                     <PublicationTime>{formattedDate}</PublicationTime>
                 </CardTime>
-            </CardTop>
-
-            
-
+            </CardTop>         
             <CardHead>
                 <AuthorAvatar src={author.imageUrl} alt={`${author.name}'s Avatar`}/>
                 <HeadRight>
@@ -187,7 +189,6 @@ const CardPost = ({ author, title, feed, subFeed, publicationTime, content}) => 
                     <CardTitle>{title}</CardTitle>
                 </HeadRight>
             </CardHead>
-            <Separator/>
             <ContentContainer>
             <CardContent dangerouslySetInnerHTML={{ __html: content }} />
             <CardOptions>
