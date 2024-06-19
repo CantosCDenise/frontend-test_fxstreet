@@ -18,7 +18,6 @@ const FiltersContainer = styled.div`
 const ButtonsContainer = styled.div`
     display: flex;
     flex-direction: row;
-    /* margin-bottom: 20px; */
 `;
 
 const Button = styled.div`

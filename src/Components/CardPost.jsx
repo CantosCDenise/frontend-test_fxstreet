@@ -26,6 +26,10 @@ const CardTop = styled.div`
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 
+    @media only screen and (max-width: 1080px) {
+    height: auto;
+  }
+
 `
 const CardCategory = styled.div`
     display: flex;
@@ -39,12 +43,30 @@ const CardCategory = styled.div`
     font-size: 17.6px;
     font-weight: 700;
     line-height: 20.8px;
+
+    @media only screen and (max-width: 1080px) {
+    flex-direction: column;
+    margin: 10px;
+    gap: 0;
+
+        img {
+            display: none;
+        }
+  }
 `
 const PostType = styled.span`
     color: #304C70;
+
+    @media only screen and (max-width: 1080px) {
+    font-size: 12.8px;
+  }
 `
 const PostSubType = styled.span`
     color: #7598C4;
+
+    @media only screen and (max-width: 1080px) {
+    font-size: 16px;
+  }
 `
 
 const CardTime = styled.div`
