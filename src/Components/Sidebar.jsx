@@ -54,11 +54,15 @@ const MobileLogo = styled.img`
 `
 
 const MobileMenu = styled.div`
-    display: flex;
+    display: none;
     flex-direction: row;
     align-items: center;
     width: 50px;
     justify-content: space-between;
+
+    @media only screen and (max-width: 1080px) {
+    display: flex;
+  }
 `
 
 const Menu = styled.div`
