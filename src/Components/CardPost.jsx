@@ -9,15 +9,13 @@ import { format } from 'date-fns';
 import DropdownMenu from "./DropdownMenu";
 
 const CardPostContainer = styled.div`
-    width: 700px;
+    width: 95%;
     height: auto;
     
     border: 1px solid #DDDEDF;
     border-radius: 5px;
     color: #49494F;
     background-color: #FFFFFF;
-    
-    margin-left: 1px;
 `
 //Head styles
 const CardTop = styled.div`

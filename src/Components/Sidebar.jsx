@@ -5,7 +5,7 @@ const SidebarContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 100px;
-    width: 255px;
+    width: 100%;
     height: 100%;
     background-color: #242d38;
 `;

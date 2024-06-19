@@ -4,10 +4,11 @@ import styled from "styled-components";
 const WidgetsContainer = styled.div`
     display: flex;
     flex-direction: column;
-    width: 410px;
+    width: 90%;
     height: 100%;
+    margin-top: 20px;
+    margin-left: 30px;
     gap: 22px;
-
 `
 const FirstWidget = styled.div`
     width: 100%;

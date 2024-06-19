@@ -4,15 +4,13 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 const LatestContainer = styled.div`
-    display: flex;
-    width: 702px;
-    flex-direction: column;
-    gap: 15px;
-
+    width: 100%;
+    padding: 15px;
 `
 const ButtonsContainer = styled.div`
     display: flex;
     flex-direction: row;
+    margin-bottom: 20px;
 `
 const LatestButton = styled.div`
     width: 76px;
@@ -41,9 +39,13 @@ const PopularButton = styled.div`
 
 const PostsContainter = styled.div`
     width: 100%;
+    max-height: 850px;
+    overflow-y: auto;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     gap: 15px;
+
 `
 const Latest = () => {
 
@@ -63,8 +65,7 @@ const Latest = () => {
         fetch('https://run.mocky.io/v3/ef694c62-9a57-4797-8624-d2afea2a2b1b')
             .then(response => response.json())
             .then(data => {
-                const latestPosts = data.filter(post => !post.isPopular)
-                setPosts(latestPosts);
+                setPosts(data);
             });
     }, []);
 
@@ -75,7 +76,7 @@ const Latest = () => {
                     <PopularButton onClick={handlePopularButtonClick}>Popular</PopularButton>
             </ButtonsContainer>
             <PostsContainter>
-                {posts.slice(0,2).map(post => (
+                {posts.map(post => (
                     <CardPost key={post.id} {...post} />
                 ))}
             </PostsContainter>
