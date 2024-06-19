@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import DropdownIcon from '../icons/dots.svg';
 import BackIcon from '../icons/leftarrow.svg';
+import { FaArrowLeft } from "react-icons/fa";
 
 const DropdownContainer = styled.div`
     position: relative;
@@ -63,12 +64,6 @@ const BackButton = styled.button`
 
     font-size: 16px;
     font-weight: 400;
-
-    img {
-        width: 21px;
-        height: 17px;
-        margin-bottom: 12px;
-    }
 
     &&:hover {
         cursor: pointer;
@@ -133,7 +128,7 @@ const DropdownMenu = () => {
             {showForm && (
                 <FormContainer>
                     <BackButton onClick={handleBackClick}>
-                        <img src={BackIcon} alt="Back Icon" />
+                        <FaArrowLeft style={{ fontSize: '15px', color: "#49494F" }}/>
                         Tell us why:
                     </BackButton>
                     <RadioGroup>
