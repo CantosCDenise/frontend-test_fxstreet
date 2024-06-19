@@ -5,6 +5,7 @@ import ArrowIcon from '../icons/arrow.svg';
 import ClockIcon from '../icons/clock.svg';
 import { format } from 'date-fns';
 import DropdownMenu from "./DropdownMenu";
+import parse from 'html-react-parser';
 
 const CardPostContainer = styled.div`
     width: 95%;
@@ -84,7 +85,13 @@ const PublicationTime = styled.span`
 const ContentContainer = styled.div`
     padding: 25px;
     padding-top: 0px;
-`
+
+    img {
+        width: 100%;
+        height: auto;
+        margin-top: 15px; /* Espacio entre imágenes, ajustable según necesidad */
+    }
+`;
 
 //Author styles
 const CardHead = styled.div`
@@ -276,6 +283,16 @@ const CardPost = ({ author, title, feed, subFeed, publicationTime, content}) => 
         setSaved(!saved)
     }
 
+    const renderImages = (parsedContent) => {
+        return parsedContent.map((node, index) => {
+            if (node.type === 'tag' && node.name === 'img' && node.attribs.src) {
+                return <img key={index} src={node.attribs.src} alt="PostImage" />;
+            }
+            return null;
+        });
+    };
+
+    const parsedContent = parse(content);
 
     return (
         <CardPostContainer>
@@ -301,7 +318,13 @@ const CardPost = ({ author, title, feed, subFeed, publicationTime, content}) => 
                 </HeadRight>
             </CardHead>
             <ContentContainer>
-            <CardContent dangerouslySetInnerHTML={{ __html: content }} />
+            {/* Renderización del contenido parseado */}
+            <CardContent>
+                    {parsedContent}
+                </CardContent>
+
+                {/* Renderización de imágenes extraídas */}
+                {renderImages(parsedContent)}
 
             <CardOptions>
             {!liked && (
