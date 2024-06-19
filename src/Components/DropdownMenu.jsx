@@ -64,6 +64,12 @@ const BackButton = styled.button`
     font-size: 16px;
     font-weight: 400;
 
+    img {
+        width: 21px;
+        height: 17px;
+        margin-bottom: 12px;
+    }
+
     &&:hover {
         cursor: pointer;
     }
