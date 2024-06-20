@@ -79,6 +79,17 @@ const PostsContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 15px;
+
+    @media only screen and (max-width: 1080px) {
+        width: 95%;
+        scrollbar-width: none;
+        
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
+      
+    }
+
 `;
 
 const Latest = () => {
