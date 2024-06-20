@@ -91,11 +91,11 @@ const Sidebar = () => {
         <SidebarContainer>
             <SidebarLogo src={LogoIcon} alt="FXS logo"/>
             <Menu>
-                <a href="link">Trade ideas</a>
-                <a href="link">Strategies</a>
-                <a href="link">Signals</a>
-                <a href="link">Events</a>
-                <a href="link">Recordings</a>
+                <a href="#">Trade ideas</a>
+                <a href="#">Strategies</a>
+                <a href="#">Signals</a>
+                <a href="#">Events</a>
+                <a href="#">Recordings</a>
             </Menu>
             <MobileContainer>
                 <MobileLogo src={LogoMobileIcon} alt="FXS logo" />

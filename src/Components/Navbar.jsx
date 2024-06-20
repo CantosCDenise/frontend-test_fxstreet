@@ -16,6 +16,8 @@ const FirstLink = styled.div`
     align-items: center;
     margin-left: 20px;
     gap: 10px;
+    color: #304C70;
+    font-size: 15px;
 
 `
 const Profile = styled.div`
@@ -24,6 +26,8 @@ const Profile = styled.div`
     align-items: center;
     margin-right: 20px;
     gap: 10px;
+    color: #8C8D91;
+    font-size: 15px;
 
     svg {
         fill: #8C8D91;

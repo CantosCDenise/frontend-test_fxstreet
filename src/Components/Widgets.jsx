@@ -20,8 +20,8 @@ const FirstWidget = styled.div`
     border-radius: 5px;
 
     & p{
-        font-size: 15px;
-        padding: 10px;
+        font-size: 20px;
+        padding: 20px;
     }
 `
 const Button = styled.button `
@@ -29,6 +29,9 @@ const Button = styled.button `
     height: 56px;
     border: 2px solid #304C70;
     border-radius: 5px;
+
+    color: #304C70;
+    font-size: 20px;
 
     &:hover {
         cursor: pointer;
